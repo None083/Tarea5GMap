@@ -4,7 +4,7 @@
 
 package paquetea;
 
-import java.util.SortedMap;
+import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -13,12 +13,27 @@ import java.util.TreeMap;
  */
 public class Traductor {
 
-    private SortedMap<String, String> traduccion;
+    private Map<String, String> traduccion;
 
     public Traductor() {
         this.traduccion = new TreeMap<>();
     }
+
+    public Map<String, String> getTraduccion() {
+        return traduccion;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Traductor{");
+        sb.append("traduccion=").append(traduccion);
+        sb.append('}');
+        return sb.toString();
+    }
     
-    
+    public void guardarEntrada(String palabraExtranjera, String palabraEspañol){
+        this.traduccion.put(palabraExtranjera, palabraEspañol);
+    }
     
 }
