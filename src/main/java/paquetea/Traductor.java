@@ -4,6 +4,7 @@
 
 package paquetea;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -32,8 +33,32 @@ public class Traductor {
         return sb.toString();
     }
     
-    public void guardarEntrada(String palabraExtranjera, String palabraEspañol){
-        this.traduccion.put(palabraExtranjera, palabraEspañol);
+    public void guardarEntrada(String palabraExtranjera, String palabraEspanyol){
+        this.traduccion.put(palabraExtranjera, palabraEspanyol);
+    }
+    
+    public void borrarEntrada(String palabraExtranjera){
+        this.traduccion.remove(palabraExtranjera);
+    }
+    
+    public void borrarEntrada(String palabraExtranjera, String palabraEspaniol){
+        this.traduccion.remove( palabraExtranjera, palabraEspaniol);
+    }
+    
+    public void modificarEntrada(String palabraExtranjera, String palabraEspaniol){
+        this.traduccion.replace(palabraExtranjera, palabraEspaniol);
+    }
+    
+    public String traduccionPalabra(String palabraExtranjera){
+        return this.traduccion.get(palabraExtranjera);
+    }
+    
+    public ArrayList<String> listaPalabrasExtranjerasArrayList(){
+        return new ArrayList<>(this.traduccion.keySet());
+    }
+    
+    public ArrayList<String> listaPalabrasEspanyolArrayList(){
+        return new ArrayList<>(this.traduccion.values());
     }
     
 }
