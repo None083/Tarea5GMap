@@ -41,12 +41,12 @@ public class Traductor {
         this.traduccion.remove(palabraExtranjera);
     }
     
-    public void borrarEntrada(String palabraExtranjera, String palabraEspaniol){
-        this.traduccion.remove( palabraExtranjera, palabraEspaniol);
+    public void borrarEntrada(String palabraExtranjera, String palabraEspanyol){
+        this.traduccion.remove(palabraExtranjera, palabraEspanyol);
     }
     
-    public void modificarEntrada(String palabraExtranjera, String palabraEspaniol){
-        this.traduccion.replace(palabraExtranjera, palabraEspaniol);
+    public void modificarEntrada(String palabraExtranjera, String palabraEspanyol){
+        this.traduccion.replace(palabraExtranjera, palabraEspanyol);
     }
     
     public String traduccionPalabra(String palabraExtranjera){
@@ -60,5 +60,5 @@ public class Traductor {
     public ArrayList<String> listaPalabrasEspanyolArrayList(){
         return new ArrayList<>(this.traduccion.values());
     }
-    
+ 
 }
